@@ -43,7 +43,6 @@ Matrix addMatrices(Matrix a, Matrix b){
     NN_ASSERT(a.rows == b.rows && a.cols == b.cols); 
     NN_ASSERT(a.content!=NULL && b.content!=NULL);
     Matrix c = allocateMatrix(a.rows, a.cols);
-    size_t index = 0;
     size_t common_shape = a.cols;
     for(size_t i = 0; i< a.rows; ++i){
         for(size_t j = 0; j< a.cols;++j){
@@ -55,10 +54,9 @@ Matrix addMatrices(Matrix a, Matrix b){
 void printMatrix(Matrix m){
     printf("Shape  of matrix is (%zu,%zu)\n", m.rows, m.cols);
     printf("------------------------------------------------\n");
-    size_t m = 0;
     for(size_t i = 0; i< m.rows;++i){
         for(size_t j = 0; j< m.cols;++j){
-            pritnf("%f ", MatrixAt(m, index,j));
+            printf("%f ", MatrixAt(m, index,j));
         }
         printf("\n");
         index +=m.cols;
