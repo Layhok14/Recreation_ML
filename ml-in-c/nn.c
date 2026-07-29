@@ -1,6 +1,5 @@
 #include <math.h>
 #include "nn.h"
-#include <stdio.h>
 #define ROWS 4
 #define COLS 3
 
@@ -16,7 +15,6 @@ Matrix initailize_weight(Matrix m){
     return m;
 }
 
-
 int main(){
     srand(67);
     Matrix m = allocateMatrix(ROWS, COLS); 
@@ -24,7 +22,7 @@ int main(){
     printf("%zu\n", _Alignof(Matrix));
     printMatrix(m);
     //free the memory
-    deallocateMatrix(m.content);
+    deallocateMatrix(m);
     return 0; 
 }
 

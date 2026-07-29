@@ -2,6 +2,7 @@
 #define NN_H_
 
 #include<stddef.h>
+#include<stdio.h>
 
 #ifndef NN_ASSERT 
 #include<assert.h>
@@ -54,6 +55,7 @@ Matrix addMatrices(Matrix a, Matrix b){
 void printMatrix(Matrix m){
     printf("Shape  of matrix is (%zu,%zu)\n", m.rows, m.cols);
     printf("------------------------------------------------\n");
+    size_t index = 0;
     for(size_t i = 0; i< m.rows;++i){
         for(size_t j = 0; j< m.cols;++j){
             printf("%f ", MatrixAt(m, index,j));
@@ -78,4 +80,4 @@ void multiplyMatrices(Matrix a, Matrix b){
         }
     }
 }
-#endif
+    
